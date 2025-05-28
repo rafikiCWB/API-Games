@@ -1,9 +1,9 @@
 package io.apijogos.modal.entities;
 
+import io.apijogos.dto.GameMinDTO;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.Setter;
+import org.springframework.beans.BeanUtils;
 
 import java.util.Objects;
 
@@ -42,6 +42,10 @@ public class Game {
     this.imgUrl = imgUrl;
     this.shortDescription = shortDescription;
     this.longDescription = longDescription;
+  }
+
+  public Game(GameMinDTO game) {
+    BeanUtils.copyProperties(game, this);
   }
 
   @Override
@@ -129,4 +133,5 @@ public class Game {
   public void setLongDescription(String longDescription) {
     this.longDescription = longDescription;
   }
+
 }
