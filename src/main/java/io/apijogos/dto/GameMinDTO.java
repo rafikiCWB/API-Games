@@ -1,5 +1,7 @@
 package io.apijogos.dto;
+
 import io.apijogos.modal.entities.Game;
+import io.apijogos.projections.GameMinProjection;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeansException;
 
@@ -19,14 +21,13 @@ public class GameMinDTO {
     }
   }
 
-//  public GameMinDTO(GameMinProjection projection) {
-//    id = projection.getId();
-//    title = projection.getTitle();
-//    year = projection.getGameYear();
-//    imgUrl = projection.getImgUrl();
-//    shortDescription = projection.getShortDescription();
-//  }
-
+  public GameMinDTO(GameMinProjection projection) {
+    id = projection.getId();
+    title = projection.getTitle();
+    year = projection.getGameYear();
+    imgUrl = projection.getImgUrl();
+    shortDescription = projection.getShortDescription();
+  }
 
   public Long getId() {
     return id;
@@ -67,4 +68,5 @@ public class GameMinDTO {
   public void setShortDescription(String shortDescription) {
     this.shortDescription = shortDescription;
   }
+
 }
