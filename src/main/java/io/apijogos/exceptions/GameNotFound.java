@@ -1,4 +1,3 @@
-/*
 package io.apijogos.exceptions;
 
 public class GameNotFound extends RuntimeException {
@@ -6,4 +5,3 @@ public class GameNotFound extends RuntimeException {
         super(message);
     }
 }
-*/
