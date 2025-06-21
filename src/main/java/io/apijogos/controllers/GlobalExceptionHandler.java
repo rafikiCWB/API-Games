@@ -1,8 +1,6 @@
 package io.apijogos.controllers;
 
 import io.apijogos.exceptions.BadRequestException;
-import io.apijogos.exceptions.GameListNotFound;
-import io.apijogos.exceptions.GameNotFound;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -29,7 +27,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(ERROR + e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(GameNotFound.class)
+   /* @ExceptionHandler(GameNotFound.class)
     public ResponseEntity<String> handleGameNotFoundException(GameNotFound e) {
         return new ResponseEntity<>(ERROR + e.getMessage(), HttpStatus.NOT_FOUND);
     }
@@ -37,6 +35,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(GameNotFound.class)
     public ResponseEntity<String> handleGameListNotFoundException(GameListNotFound e) {
         return new ResponseEntity<>(ERROR + e.getMessage(), HttpStatus.NOT_FOUND);
-    }
+    }*/
 
 }

@@ -1,4 +1,4 @@
-CREATE TABLE tb_jogador
+/*CREATE TABLE tb_jogador
 (
     id_jogador BIGINT       NOT NULL PRIMARY KEY,
     nome       VARCHAR(255) NOT NULL
@@ -12,9 +12,9 @@ CREATE SEQUENCE game_seq
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
-    CACHE 1;
+    CACHE 1;*/
 
-CREATE TABLE tb_game
+CREATE TABLE IF NOT EXISTS tb_game
 (
     id                BIGINT       NOT NULL PRIMARY KEY,
     title             VARCHAR(255) NOT NULL UNIQUE,

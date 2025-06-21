@@ -43,4 +43,9 @@ public class GameListController {
         return byGameList;
     }
 
+    //add pagination to project
+    public ResponseEntity<GameMinDTO> findToPage() {
+        return null;
+    }
+
 }
