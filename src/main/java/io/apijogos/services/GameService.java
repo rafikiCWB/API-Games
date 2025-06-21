@@ -6,6 +6,8 @@ import io.apijogos.modal.entities.Game;
 import io.apijogos.projections.GameMinProjection;
 import io.apijogos.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,6 +32,11 @@ public class GameService {
   }
 
   @Transactional(readOnly = true)
+  public Page<Game> pageGamesService(Pageable pageable) {
+    return gameRepository.findAll(pageable);
+  }
+
+  @Transactional(readOnly = true)
   public List<GameMinDTO> minDTO() {
     List<Game> result = gameRepository.findAll();
     return result.stream().map(GameMinDTO::new).toList(); //"Map" transforma objetos de uma coisa para outra. ->
@@ -45,7 +52,8 @@ public class GameService {
   public List<GameMinDTO> findByGameList(Long listId) {
     List<GameMinProjection> games = gameRepository.searchByList(listId);
     return games.stream().map(GameMinDTO::new).toList();
-
   }
+
+
 
 }

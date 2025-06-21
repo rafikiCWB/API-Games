@@ -42,10 +42,4 @@ public class GameListController {
         List<GameMinDTO> byGameList = gameService.findByGameList(listId);
         return byGameList;
     }
-
-    //add pagination to project
-    public ResponseEntity<GameMinDTO> findToPage() {
-        return null;
-    }
-
 }
